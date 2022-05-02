@@ -16,7 +16,10 @@ class Search extends Component {
         this.setState(
             () => ({ type: event.target.dataset.type }),
             () => {
-                this.props.searchMovies(this.state.search, this.state.type)
+                this.props.searchMovies(
+                    this.state.search ? this.state.search : "matrix",
+                    this.state.type
+                )
             }
         )
     }
